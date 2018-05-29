@@ -1,0 +1,32 @@
+<!--
+  Generated template for the PrincipalPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Principal ROOT</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+<!--el atributo bloc del botón hace que abarque todo el ancho de la pantalla-->
+  <button ion-button
+          block
+          color="primary"
+          (click)="navegarPagina()">
+    Ir a la pagina 2
+  </button>
+  <button ion-button
+          block
+          color="secondary"
+          [navPush]="pagina2">
+    Ir a la pagina 2 - HTML
+  </button>
+
+</ion-content>
