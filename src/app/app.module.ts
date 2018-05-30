@@ -6,11 +6,12 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 
+import { MistabsPage } from '../pages/mistabs/mistabs';
+
 import {
   PrincipalPage,
   Pagina2Page,
   Pagina3Page,
-  TabsPage,
   AjustesPage,
   Ajustes2Page,
   ModalPage
@@ -22,14 +23,16 @@ import {
     PrincipalPage,
     Pagina2Page,
     Pagina3Page,
-    TabsPage,
     AjustesPage,
     Ajustes2Page,
-    ModalPage
+    ModalPage,
+    MistabsPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp , {
+      backButtonText: 'Atras'
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -37,10 +40,10 @@ import {
     PrincipalPage,
     Pagina2Page,
     Pagina3Page,
-    TabsPage,
     AjustesPage,
     Ajustes2Page,
-    ModalPage
+    ModalPage,
+    MistabsPage
   ],
   providers: [
     StatusBar,

@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavParams, ViewController } from 'ionic-angular';
 
-/**
- * Generated class for the ModalPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -15,11 +9,38 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ModalPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  nombre:string="";
+  edad:number=0;
+
+  constructor(public viewCtrl: ViewController,
+              public navParams: NavParams){
+
+    this.nombre = this.navParams.get("nombre");
+    this.edad = this.navParams.get("edad");
+
+    console.log(this.nombre + this.edad);
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ModalPage');
-  }
+    //MÉTODOS PARA CERRAR LA VENTANA
+    //Debemos usar el ViewController
+    cerrar_con_parametros(){
+
+        let objeto = {
+          nombre: "Juan Carlos",
+          edad: 18,
+          coords:{
+            lat: 10,
+            lng: -10
+          }
+        };
+
+        this.viewCtrl.dismiss( objeto ); //esta instruccion cierra el modal con el objeto por parametros
+    }
+
+    cerrar_sin_parametros(){
+        this.viewCtrl.dismiss();
+    }
+
+
 
 }

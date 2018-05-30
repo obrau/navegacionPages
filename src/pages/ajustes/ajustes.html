@@ -2,6 +2,13 @@
 
   <ion-navbar color="primary">
     <ion-title>Ajustes</ion-title>
+    <ion-buttons>
+          <button ion-button
+                  icon-only
+                  menuToggle>
+                  <ion-icon name="menu"></ion-icon>
+          </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
@@ -13,6 +20,13 @@
             block
             (click)="activarPrincipal()">
     Activar principal
+    </button>
+
+    <button ion-button
+            block
+            color="morado"
+            (click)="mostrar_modal()">
+    Mostrar ventana MODAL
     </button>
 
 </ion-content>
